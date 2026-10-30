@@ -10,11 +10,10 @@ while (pokracovani)
     double cislo1 = 0;
     double cislo2 = 0;
     
-    Console.WriteLine("Zadejte operaci: ");
-    
     string[] operace = {};
     while (!spravne1 || !spravne2 || !spravne3)
     {
+        Console.WriteLine("Zadejte operaci: ");
         operace = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
         
         if (operace.Length == 3)
@@ -41,6 +40,13 @@ while (pokracovani)
             {
                 Console.WriteLine("špatné 2. číslo");
             }
+
+            if (operace[1] == "/" && cislo2 == 0)
+            {
+                Console.WriteLine("0 nelze dělit!");
+                spravne2 = false;
+            }
+            
         }
 
         else
@@ -50,11 +56,11 @@ while (pokracovani)
     }
 
     Console.WriteLine(Pocet.provedeni(cislo1, cislo2, operace[1]));
-    
-    Console.WriteLine("Chcete pokračovat? y/n");
+
     string idk = "";
-    while (idk != "y" || idk != "n")
+    while (idk != "y"  && idk != "n")
     { 
+        Console.WriteLine("Chcete pokračovat? y/n");
         idk = Console.ReadLine().ToLower();
     }
 
