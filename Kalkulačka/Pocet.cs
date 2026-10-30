@@ -2,9 +2,9 @@ namespace Kalkulačka;
 
 public class Pocet
 {
-    public static double provedeni(double x, double y, string operace)
+    public static double provedeni(double x, double y, string znamenko)
     {
-        switch (operace)
+        switch (znamenko)
         {
             case "+":
             {
